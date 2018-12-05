@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Editovat produkt{% endblock %}
+
+{% block body %}
+<br>
+    <h1>Editovat produkt</h1>
+
+    {{ include('product/_form.html.twig', {'button_label': 'Uložit změny'}) }}
+<br>
+    <a class="btn btn-primary" href="{{ path('product_index') }}" role="button">Zpět na výpis produktů</a>
+<br>
+<br>
+    {{ include('product/_delete_form.html.twig') }}
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Detail{% endblock %}
+
+{% block body %}
+<br>
+<div class="container">
+        <div class="row">
+        <div class="col-md-6">
+            <h3>{{ product.nazev }}</h3>
+            <p>Popis</p>
+            </div>
+           <div class="col-md-6">
+           <br><br>
+            <p>Počet kusů skladem: {{ product.pocetKusu }}</p>
+            <p>Cena: {{ product.cena }}</p>
+            <p><a class="btn btn-primary" href="{{ path('objednavkovy_formular') }}" role="button">Objednat</a></p>
+            </div>
+            </div>
+<p><a class="btn btn-secondary" href="{{ path('seznam_produktu') }}" role="button">Zpět na seznam produktů</a></p>
+
+{% endblock %}

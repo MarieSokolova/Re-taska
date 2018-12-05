@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %}Re-taška{% endblock %}
+
+{% block body %}
+<div class="jumbotron">
+<div class="container">
+    <h2 class="text-center">Re-taška mění nakupování a chrání oceány</h2>
+           <div class="container">
+            <div class="row">
+          <div class="col-md-6">
+          <br>
+            <p>Jednorázové plastové výrobky patří mezi největší znečišťovatele životního prostředí na světě. Výrazný podíl na tom mají nákupní tašky a sáčky, které je přitom snadné vyrábět také z recyklovatelných materiálů. Přestože se již v řadě obchodů začaly objevovat papírové tašky, stále zůstává drtivá většina z nákupních tašek a sáčků dostupných v místech prodeje plastová. </p>
+            <p><a class="btn btn-primary" href="{{ path('seznam_produktu') }}" role="button">Zobrazit produkty</a></p>
+            </div>
+            <div class="col-md-6">
+           <img src="https://images.2nature.cz/obr/productFoto/attachments/re-sack-platena-nakupni-taska.jpeg" class="img-fluid"  style="width: 300px">
+          </div>
+          </div>
+
+{% endblock %}
+

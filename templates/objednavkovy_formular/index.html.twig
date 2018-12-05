@@ -24,36 +24,21 @@
 
       <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="{{ path('homepage') }}">Hlavní strana</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{{ path('seznam_produktu') }}">Produkty</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Vyhledávání</a>
-          </li>
-          <li class="nav-item">
+           <li class="nav-item">
             <a class="nav-link" href="#">777 888 999</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Košík</a>
-          </li>
-        </ul>
+          </ul>
       </div>
     </nav>
     <main>
     </main>
     </body>
-    
 
-  <div class="container">
-  <br>
-  <br>
-       
-            {% block body %}{% endblock %}
-      </div>     
-       
+
+
+{% block body %}
+
+{% endblock %}
 <!-- Footer -->
 <footer class="page-footer font-small indigo fixed-bottom">
 
@@ -64,44 +49,11 @@
       <div class="row">
 
         <!-- Grid column -->
-        <div class="col-md-3 mx-auto">
-
-          <!-- Links -->
-          <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Menu</h5>
-
-          <ul class="list-unstyled">
-            <li>
-              <a href="{{ path('homepage') }}">Hlavní strana</a>
-            </li>
-            <li>
-              <a href="{{ path('seznam_produktu') }}">Produkty</a>
-            </li>
-            <li>
-              <a href="#!">Vyhledávání</a>
-            </li>
-            <li>
-              <a href="#!">Košík</a>
-            </li>
-          </ul>
-
-        </div>
-        <!-- Grid column -->
 
         <hr class="clearfix w-100 d-md-none">
 
         <!-- Grid column -->
-        <div class="col-md-3 mx-auto">
-
-          <!-- Links -->
-          <br>© 2018 Copyright</br>
-
-         </div>
-        <!-- Grid column -->
-
-        <hr class="clearfix w-100 d-md-none">
-
-        <!-- Grid column -->
-        <div class="col-md-3 mx-auto">
+        <div class="col-md-4 mx-auto">
 
           <!-- Links -->
           <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Kontakt</h5>
@@ -119,9 +71,17 @@
         <!-- Grid column -->
 
         <hr class="clearfix w-100 d-md-none">
+        
+        <!-- Grid column -->
+        <div class="col-md-4 mx-auto">
+
+          <!-- Links -->
+          <br>© 2018 Copyright</br>
+
+         </div>
 
         <!-- Grid column -->
-        <div class="col-md-3 mx-auto">
+        <div class="col-md-4 mx-auto">
 
           <!-- Links -->
                 <img src="https://files.slack.com/files-pri/TDTQT517V-FEFPW9KCM/re-ta__ka_logo.png" class="rounded"  style="width: 250px">
@@ -139,6 +99,3 @@
   </footer>
   <!-- Footer -->
   
-        {% block javascripts %}{% endblock %}
-    
-</html>

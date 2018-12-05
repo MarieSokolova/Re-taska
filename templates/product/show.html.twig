@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Produkt{% endblock %}
+
+{% block body %}
+<br>
+    <h1>Produkt</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ product.id }}</td>
+            </tr>
+            <tr>
+                <th>Název</th>
+                <td>{{ product.nazev }}</td>
+            </tr>
+            <tr>
+                <th>Popis</th>
+                <td>{{ product.popis }}</td>
+            </tr>
+            <tr>
+                <th>Cena</th>
+                <td>{{ product.cena }}</td>
+            </tr>
+            <tr>
+                <th>Počet kusů na skladě</th>
+                <td>{{ product.pocetKusu }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    {{ include('product/_delete_form.html.twig') }}
+    <br>
+    <a class="btn btn-primary" href="{{ path('product_index') }}" role="button">Zpět na výpis produktů</a>
+    <a class="btn btn-primary" href="{{ path('product_edit', {'id': product.id}) }}" role="button">Editovat</a>
+    {% endblock %}
