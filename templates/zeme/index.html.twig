@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Zeme index{% endblock %}
+
+{% block body %}
+    <h1>Zeme index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>ZemeDoruceni</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for zeme in zemes %}
+            <tr>
+                <td>{{ zeme.id }}</td>
+                <td>{{ zeme.zemeDoruceni }}</td>
+                <td>
+                    <a href="{{ path('zeme_show', {'id': zeme.id}) }}">show</a>
+                    <a href="{{ path('zeme_edit', {'id': zeme.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('zeme_new') }}">Create new</a>
+{% endblock %}

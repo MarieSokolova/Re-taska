@@ -10,7 +10,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class ObjednavkovyFormularController extends AbstractController
 {
     /**
-     * @Route("/objednavka", name="objednavkovy_formular")
+     * @Route("/objednavkovy_formular", name="objednavkovy_formular")
      */
     public function index()
     {

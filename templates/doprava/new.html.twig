@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Doprava{% endblock %}
+
+{% block body %}
+    <h1>Create new Doprava</h1>
+
+    {{ include('doprava/_form.html.twig') }}
+
+    <a href="{{ path('doprava_index') }}">back to list</a>
+{% endblock %}

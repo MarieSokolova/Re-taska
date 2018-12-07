@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Platba index{% endblock %}
+
+{% block body %}
+    <h1>Platba index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>TypPlatby</th>
+                <th>Cena</th>
+                <th>Price</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for platba in platbas %}
+            <tr>
+                <td>{{ platba.id }}</td>
+                <td>{{ platba.typPlatby }}</td>
+                <td>{{ platba.cena }}</td>
+                <td>{{ platba.price }}</td>
+                <td>
+                    <a href="{{ path('platba_show', {'id': platba.id}) }}">show</a>
+                    <a href="{{ path('platba_edit', {'id': platba.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('platba_new') }}">Create new</a>
+{% endblock %}

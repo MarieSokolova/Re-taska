@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Doprava{% endblock %}
+
+{% block body %}
+    <h1>Edit Doprava</h1>
+
+    {{ include('doprava/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('doprava_index') }}">back to list</a>
+
+    {{ include('doprava/_delete_form.html.twig') }}
+{% endblock %}

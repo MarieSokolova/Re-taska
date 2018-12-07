@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Doprava index{% endblock %}
+
+{% block body %}
+    <h1>Doprava index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>TypDopravy</th>
+                <th>Cena</th>
+                <th>Price</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for doprava in dopravas %}
+            <tr>
+                <td>{{ doprava.id }}</td>
+                <td>{{ doprava.typDopravy }}</td>
+                <td>{{ doprava.cena }}</td>
+                <td>{{ doprava.price }}</td>
+                <td>
+                    <a href="{{ path('doprava_show', {'id': doprava.id}) }}">show</a>
+                    <a href="{{ path('doprava_edit', {'id': doprava.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('doprava_new') }}">Create new</a>
+{% endblock %}

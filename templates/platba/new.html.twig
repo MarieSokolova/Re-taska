@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Platba{% endblock %}
+
+{% block body %}
+    <h1>Create new Platba</h1>
+
+    {{ include('platba/_form.html.twig') }}
+
+    <a href="{{ path('platba_index') }}">back to list</a>
+{% endblock %}
