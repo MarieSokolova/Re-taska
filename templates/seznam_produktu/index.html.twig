@@ -16,7 +16,7 @@
           <div class="col-md-4">
             <a href="{{ path('detail_produktu', {'id': product.id}) }}"><h3>{{ product.nazev }}</h3></a>
             <p>{{ product.cena }} Kč</p>
-            <p><a class="btn btn-primary" href="{{ path('objednavkovy_formular') }}" role="button">Objednat</a></p>
+            <p><a class="btn btn-primary" href="{{ path('objednavka', {'id': product.id}) }}" role="button">Objednat</a></p>
             </div>
             {% endfor %}
             </div>

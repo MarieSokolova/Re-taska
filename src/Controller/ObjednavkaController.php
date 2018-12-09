@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Objednavka;
+use App\Entity\Product;
 use App\Form\ObjednavkaType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -18,6 +19,7 @@ class ObjednavkaController extends AbstractController
     {
         
         $objednavka = new Objednavka();
+        
         $form = $this->createForm(ObjednavkaType::class, $objednavka);
         $form->handleRequest($request);
 
