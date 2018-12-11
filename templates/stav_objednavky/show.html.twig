@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}StavObjednavky{% endblock %}
+
+{% block body %}
+    <h1>StavObjednavky</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ stav_objednavky.id }}</td>
+            </tr>
+            <tr>
+                <th>Stav</th>
+                <td>{{ stav_objednavky.stav }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('stav_objednavky_index') }}">back to list</a>
+
+    <a href="{{ path('stav_objednavky_edit', {'id': stav_objednavky.id}) }}">edit</a>
+
+    {{ include('stav_objednavky/_delete_form.html.twig') }}
+{% endblock %}

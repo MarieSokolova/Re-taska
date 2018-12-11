@@ -75,6 +75,32 @@ class Objednavka
      */
     private $zeme;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $nazev;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $cena;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $pocetKusu;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $pocet;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\StavObjednavky", inversedBy="objednavky")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $stavObjednavky;
+
     
 
     public function getId(): ?int
@@ -198,6 +224,66 @@ class Objednavka
     public function setZeme(?Zeme $zeme): self
     {
         $this->zeme = $zeme;
+
+        return $this;
+    }
+
+    public function getNazev(): ?string
+    {
+        return $this->nazev;
+    }
+
+    public function setNazev(string $nazev): self
+    {
+        $this->nazev = $nazev;
+
+        return $this;
+    }
+
+    public function getCena(): ?int
+    {
+        return $this->cena;
+    }
+
+    public function setCena(int $cena): self
+    {
+        $this->cena = $cena;
+
+        return $this;
+    }
+
+    public function getPocetKusu(): ?int
+    {
+        return $this->pocetKusu;
+    }
+
+    public function setPocetKusu(int $pocetKusu): self
+    {
+        $this->pocetKusu = $pocetKusu;
+
+        return $this;
+    }
+
+    public function getPocet(): ?int
+    {
+        return $this->pocet;
+    }
+
+    public function setPocet(int $pocet): self
+    {
+        $this->pocet = $pocet;
+
+        return $this;
+    }
+
+    public function getStavObjednavky(): ?StavObjednavky
+    {
+        return $this->stavObjednavky;
+    }
+
+    public function setStavObjednavky(?StavObjednavky $stavObjednavky): self
+    {
+        $this->stavObjednavky = $stavObjednavky;
 
         return $this;
     }

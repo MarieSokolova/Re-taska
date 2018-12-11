@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Editovat objednávku{% endblock %}
+
+{% block body %}
+<br>
+    <h1>Změnit stav objednávky</h1>
+   
+    {{ include('objednavka/_form.html.twig', {'button_label': 'Uložit změny'}) }}
+<br>
+    <a class="btn btn-primary" href="{{ path('sprava_objednavek') }}" role="button">Zpět na seznam objednávek</a>
+<br>
+<br>
+   {{ include('sprava_objednavek/_delete_form.html.twig') }}
+{% endblock %}

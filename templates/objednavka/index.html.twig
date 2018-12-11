@@ -5,6 +5,34 @@
 {% block body %}
 <br>
 
-{{ include('objednavka/_form.html.twig') }}
+<div class="row">
+<div class="col-md-6">
+    <h2>Doručovací informace</h2>
+ {{ form_start(form) }}
+ {{ form_row(form.jmeno) }}
+{{ form_row(form.email) }}
+{{ form_row(form.telefon) }}
+{{ form_row(form.ulice) }}
+{{ form_row(form.mesto) }}
+{{ form_row(form.psc) }}
+{{ form_row(form.zeme) }}
+</div>
+<div class="col-md-6">
+<h2>Souhrn objednávky</h2>
+<p>{{ objednavka.nazev }}</p>
+<p>{{ form_row(form.pocet) }}</p>
+<p>{{ objednavka.cena }} Kč</p>
+</div>
+<div class="col-md-6">
+    <h2>Doprava a platba</h2>
+{{ form_row(form.doprava) }}
+{{ form_row(form.platba) }}
+{{ form_row(form.poznamka) }}
+</div>
 
+<div class="col-md-2">
+   <button class="btn">{{ button_label|default('Odeslat objednávku') }}</button>
+</div>
+ {{ form_end(form) }}
+</div>
 {% endblock %}

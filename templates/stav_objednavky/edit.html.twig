@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit StavObjednavky{% endblock %}
+
+{% block body %}
+    <h1>Edit StavObjednavky</h1>
+
+    {{ include('stav_objednavky/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('stav_objednavky_index') }}">back to list</a>
+
+    {{ include('stav_objednavky/_delete_form.html.twig') }}
+{% endblock %}

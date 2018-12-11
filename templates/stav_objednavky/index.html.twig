@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}StavObjednavky index{% endblock %}
+
+{% block body %}
+    <h1>StavObjednavky index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Stav</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for stav_objednavky in stav_objednavkies %}
+            <tr>
+                <td>{{ stav_objednavky.id }}</td>
+                <td>{{ stav_objednavky.stav }}</td>
+                <td>
+                    <a href="{{ path('stav_objednavky_show', {'id': stav_objednavky.id}) }}">show</a>
+                    <a href="{{ path('stav_objednavky_edit', {'id': stav_objednavky.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('stav_objednavky_new') }}">Create new</a>
+{% endblock %}

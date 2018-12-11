@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+<br>
+<h2>Seznam objednávek</h2>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Název</th>
+                <th>Počet</th>
+                <th>Cena</th>
+                <th>Kusů skladem</th>
+                <th>Jméno</th>
+                <th>E-mail</th>
+                <th>Stav</th>
+                <th></th>
+            </tr>
+        </thead>
+         <tbody>
+{% for objednavka in objednavky %}
+            <tr>
+                <td>{{ objednavka.id }}</td>
+                <td>{{ objednavka.nazev }}</td>
+                <td>{{ objednavka.pocet }}</td>
+                <td>{{ objednavka.cena }}</td>
+                <td>{{ objednavka.pocetKusu }}</td>
+                <td>{{ objednavka.jmeno }}</td>
+                <td>{{ objednavka.email }}</td>
+                <td></td>
+                <td>
+                <a class="btn btn-primary" href="{{ path('objednavka_show', {'id': objednavka.id}) }}" role="button">Detail produktu</a>
+                <a class="btn btn-primary" href="{{ path('objednavka_edit', {'id': objednavka.id}) }}" role="button">Editovat</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

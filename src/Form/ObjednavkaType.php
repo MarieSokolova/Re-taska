@@ -36,6 +36,7 @@ class ObjednavkaType extends AbstractType
     'choice_label' => 'typPlatby'
   ])
             ->add('poznamka')
+            ->add('pocet')
         ;
     }
 

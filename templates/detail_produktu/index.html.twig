@@ -14,7 +14,7 @@
            <br><br>
             <p>Počet kusů skladem: {{ product.pocetKusu }}</p>
             <p>Cena: {{ product.cena }}</p>
-            <p><a class="btn btn-primary" href="{{ path('objednavkovy_formular') }}" role="button">Objednat</a></p>
+            <p><a class="btn btn-primary" href="{{ path('objednavka', {'id': product.id}) }}" role="button">Objednat</a></p>
             </div>
             </div>
 <p><a class="btn btn-secondary" href="{{ path('seznam_produktu') }}" role="button">Zpět na seznam produktů</a></p>

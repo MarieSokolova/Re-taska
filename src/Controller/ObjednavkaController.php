@@ -13,19 +13,22 @@ use Symfony\Component\Routing\Annotation\Route;
 class ObjednavkaController extends AbstractController
 {
     /**
-     * @Route("/objednavka/{id}", name="objednavka")
+     * @Route("/objednavka/{id}", name="objednavka", methods="GET|POST")
      */
-    public function index(Request $request)
+    public function index(Product $product, Request $request)
     {
         
         $objednavka = new Objednavka();
-        
+        $objednavka->setNazev($product->getnazev());
+        $objednavka->setCena($product->getcena());
+        $objednavka->setPocetKusu($product->getpocetKusu());
+
         $form = $this->createForm(ObjednavkaType::class, $objednavka);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $em->persist($product);
+            $em->persist($objednavka);
             $em->flush();
 
             return $this->redirectToRoute('homepage');

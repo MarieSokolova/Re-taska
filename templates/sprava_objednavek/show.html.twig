@@ -1,0 +1,75 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Detail objednávky{% endblock %}
+
+{% block body %}
+<br>
+    <h2>Detail objednávky</h2>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ objednavka.id }}</td>
+            </tr>
+            <tr>
+                <th>Název</th>
+                <td>{{ objednavka.nazev }}</td>
+            </tr>
+            <tr>
+                <th>Pocet</th>
+                <td>{{ objednavka.pocet }}</td>
+            </tr>
+            <tr>
+                <th>Cena</th>
+                <td>{{ objednavka.cena }} Kč</td>
+            </tr>
+            <tr>
+                <th>Počet kusů na skladě</th>
+                <td>{{ objednavka.pocetKusu }}</td>
+            </tr>
+            <tr>
+                <th>Jméno</th>
+                <td>{{ objednavka.jmeno }}</td>
+            </tr>
+            <tr>
+                <th>E-mail</th>
+                <td>{{ objednavka.email }}</td>
+            </tr>
+            <tr>
+                <th>Ulice</th>
+                <td>{{ objednavka.ulice }}</td>
+            </tr>
+            <tr>
+                <th>Město</th>
+                <td>{{ objednavka.mesto }}</td>
+            </tr>
+            <tr>
+                <th>PSČ</th>
+                <td>{{ objednavka.psc }}</td>
+            </tr>
+            <tr>
+                <th>Země</th>
+                <td>{{ objednavka.zeme.zemeDoruceni }}</td>
+            </tr>
+            <tr>
+                <th>Doprava</th>
+                <td>{{ objednavka.doprava.typDopravy }}</td>
+            </tr>
+            <tr>
+                <th>Platba</th>
+                <td>{{ objednavka.platba.typPlatby }}</td>
+            </tr>
+            <tr>
+                <th>Poznámka</th>
+                <td>{{ objednavka.poznamka }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    
+    <br>
+    <a class="btn btn-primary" href="{{ path('sprava_objednavek') }}" role="button">Zpět na výpis produktů</a>
+    <a class="btn btn-primary" href="" role="button">Editovat</a>
+    
+      {% endblock %}
