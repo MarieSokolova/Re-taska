@@ -21,7 +21,16 @@
 <h2>Souhrn objednávky</h2>
 <p>{{ objednavka.nazev }}</p>
 <p>{{ form_row(form.pocet) }}</p>
-<p>{{ objednavka.cena }} Kč</p>
+<span id="cena">{{ objednavka.cena }} </span>Kč/ks
+<p>Doprava:
+<span id="delivery"> </span> Kč
+</p>
+<p>Způsob platby:
+<span id="payment"> </span> Kč
+</p>
+<p>Celková cena:
+<span id="totalPrice"> </span> Kč
+</p>
 </div>
 <div class="col-md-6">
     <h2>Doprava a platba</h2>
@@ -29,10 +38,40 @@
 {{ form_row(form.platba) }}
 {{ form_row(form.poznamka) }}
 </div>
-
 <div class="col-md-2">
    <button class="btn">{{ button_label|default('Odeslat objednávku') }}</button>
 </div>
  {{ form_end(form) }}
 </div>
+{% endblock %}
+
+ {% block javascripts %}
+ <script>
+ function SpocitejCenu(){
+     let cena_produktu = $('#cena').text();
+            let pocet = $('#objednavka_pocet').val();
+            let cena_dopravy = $('#objednavka_doprava option:selected').attr('data-price');
+            let cena_platba = $('#objednavka_platba option:selected').attr('data-price');
+            let celkova_cena = pocet*cena_produktu+parseInt(cena_dopravy)+parseInt(cena_platba);
+            $('#totalPrice').text(celkova_cena);
+ }
+ $('#objednavka_pocet').on('keyup', function(e) {
+            SpocitejCenu();
+        });
+$('#objednavka_doprava').on('change', function(e) {
+            let cena_dopravy = $('#objednavka_doprava option:selected').attr('data-price');
+           $('#delivery').text(cena_dopravy);
+           SpocitejCenu();
+        });
+            let cena_dopravy = $('#objednavka_doprava option:selected').attr('data-price');
+           $('#delivery').text(cena_dopravy);
+ $('#objednavka_platba').on('change', function(e) {
+            let cena_platba = $('#objednavka_platba option:selected').attr('data-price');
+           $('#payment').text(cena_platba);
+           SpocitejCenu();
+        });
+            let cena_platba = $('#objednavka_platba option:selected').attr('data-price');
+           $('#payment').text(cena_platba);       
+
+</script>
 {% endblock %}

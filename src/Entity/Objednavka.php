@@ -95,12 +95,7 @@ class Objednavka
      */
     private $pocet;
 
-    /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\StavObjednavky", inversedBy="objednavky")
-     * @ORM\JoinColumn(nullable=false)
-     */
-    private $stavObjednavky;
-
+   
     
 
     public function getId(): ?int
@@ -276,17 +271,7 @@ class Objednavka
         return $this;
     }
 
-    public function getStavObjednavky(): ?StavObjednavky
-    {
-        return $this->stavObjednavky;
-    }
-
-    public function setStavObjednavky(?StavObjednavky $stavObjednavky): self
-    {
-        $this->stavObjednavky = $stavObjednavky;
-
-        return $this;
-    }
+    
 
    
 }

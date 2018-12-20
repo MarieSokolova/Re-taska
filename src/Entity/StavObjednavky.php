@@ -21,17 +21,7 @@ class StavObjednavky
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $stav;
-
-    /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Objednavka", mappedBy="stavObjednavky")
-     */
-    private $objednavky;
-
-    public function __construct()
-    {
-        $this->objednavky = new ArrayCollection();
-    }
+   
 
     public function getId(): ?int
     {
@@ -50,34 +40,5 @@ class StavObjednavky
         return $this;
     }
 
-    /**
-     * @return Collection|Objednavka[]
-     */
-    public function getObjednavky(): Collection
-    {
-        return $this->objednavky;
-    }
-
-    public function addObjednavky(Objednavka $objednavky): self
-    {
-        if (!$this->objednavky->contains($objednavky)) {
-            $this->objednavky[] = $objednavky;
-            $objednavky->setStavObjednavky($this);
-        }
-
-        return $this;
-    }
-
-    public function removeObjednavky(Objednavka $objednavky): self
-    {
-        if ($this->objednavky->contains($objednavky)) {
-            $this->objednavky->removeElement($objednavky);
-            // set the owning side to null (unless already changed)
-            if ($objednavky->getStavObjednavky() === $this) {
-                $objednavky->setStavObjednavky(null);
-            }
-        }
-
-        return $this;
-    }
+   
 }

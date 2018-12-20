@@ -25,15 +25,21 @@ class ObjednavkaType extends AbstractType
             ->add('zeme', EntityType::class, [
     'class' => Zeme::class, 
     'choice_label' => 'zemeDoruceni'
-  ])
+      ])
          
             ->add('doprava', EntityType::class, [
     'class' => Doprava::class, 
-    'choice_label' => 'typDopravy'
+    'choice_label' => 'typDopravy',
+    'choice_attr' => function($payment) {
+            return ['data-price' => $payment->getCena()];
+        }
   ])
             ->add('platba', EntityType::class, [
     'class' => Platba::class, 
-    'choice_label' => 'typPlatby'
+    'choice_label' => 'typPlatby',
+    'choice_attr' => function($payment) {
+            return ['data-price' => $payment->getCena()];
+        }
   ])
             ->add('poznamka')
             ->add('pocet')

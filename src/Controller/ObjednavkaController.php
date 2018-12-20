@@ -13,6 +13,13 @@ use Symfony\Component\Routing\Annotation\Route;
 class ObjednavkaController extends AbstractController
 {
     /**
+     * @Route("/objednavka_odeslana", name="objednavka_odeslana", methods="GET|POST")
+     */
+    public function edit(Request $request): Response
+    {
+           return $this->render('objednavka/sent.html.twig');
+    }
+    /**
      * @Route("/objednavka/{id}", name="objednavka", methods="GET|POST")
      */
     public function index(Product $product, Request $request)
@@ -31,7 +38,7 @@ class ObjednavkaController extends AbstractController
             $em->persist($objednavka);
             $em->flush();
 
-            return $this->redirectToRoute('homepage');
+            return $this->redirectToRoute('objednavka_odeslana');
         }
 
         return $this->render('objednavka/index.html.twig', [
