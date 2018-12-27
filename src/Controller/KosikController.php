@@ -19,7 +19,7 @@ public function insert(SessionInterface $session, Product $product): Response
     {
         // načtení počtu ze session (defaultní hodnota je 0)
         $kosik = $session->get('kosik', []);
-        $kosik[] = ['name'=>$product->getNazev(), 'cena'=>$product->getCena(), pocet'=>1];
+        $kosik[] = ['name'=>$product->getNazev(), 'cena'=>$product->getCena(), 'pocet'=>1];
         
               
         // uložení nové hodnoty do session

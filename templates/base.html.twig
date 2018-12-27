@@ -51,13 +51,41 @@
           <li class="nav-item">
             <a class="nav-link" href="#">Košík</a>
           </li>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+            {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+            Přihlášený uživatel: {{ app.user.username }}
+            {% endif %}
+            </a>
+             </li>
+            <li class="nav-item">
+            <a class="nav-link" href="{{ path('app_logout') }}">
+            {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+            Odhlásit
+            {% endif %}</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ path('sprava_objednavek') }}">
+            {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+            Administrace objednávek
+            {% endif %}</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ path('product_index') }}">
+            {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+            Administrace produktů
+            {% endif %}</a>
+          </li>
+
         </ul>
       </div>
     </nav>
     <main>
     </main>
      <br>
- <br>    
+ <br> 
+ <br>
        
             {% block body %}{% endblock %}
      
