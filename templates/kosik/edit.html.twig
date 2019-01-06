@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Editovat produkt{% endblock %}
+
+{% block body %}
+<br>
+    <h1>Editovat produkt</h1>
+
+    {{ form_start(form) }}
+{{ form_row(form.name) }}
+
+ <button class="btn">{{ button_label|default('Save') }}</button>
+{{ form_end(form) }}
+<br>
+    <a class="btn btn-primary" href="{{ path('kosik') }}" role="button">Zpět na výpis produktů</a>
+<br>
+<br>
+    
+{% endblock %}

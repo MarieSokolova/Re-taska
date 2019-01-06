@@ -1,20 +1,32 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello {{ controller_name }}!{% endblock %}
+{% block title %}{% endblock %}
 
 {% block body %}
 <style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+    
 </style>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+    <h2>Košík</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Název produktu</th>
+                <th>Cena</th>
+                <th>Počet kusů</th>
+            </tr>
+        </thead>
+        <tbody>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'src/Controller/KosikController.php'|file_link(0) }}">src/Controller/KosikController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'templates/kosik/index.html.twig'|file_link(0) }}">templates/kosik/index.html.twig</a></code></li>
-    </ul>
-</div>
+     {% for product in kosik %}
+            <tr>
+                <td>{{ product.nazev }}</td>
+                <td>{{ product.cena }} Kč</td>
+                <td>{{ product.pocet }}</td>
+            </tr>
+       
+        {% endfor %}
+        </tbody>
+        <a class="btn btn-outline-primary btn-lg btn-block" href="" role="button">Pokračovat v objednávce</a>
+
 {% endblock %}
